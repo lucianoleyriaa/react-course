@@ -1,9 +1,10 @@
+import Card from "../../Card/Card";
 import ExpenseDate from "../ExpenseDate/ExpenseDate";
 import classes from "./ExpenseItem.module.css";
 
 const ExpenseItem = (props) => {
    return (
-      <div className={classes["expense-item"]}>
+      <Card className={classes["expense-item"]}>
          <ExpenseDate date={props.data.expenseDate} />
          <div className={classes["expense-item__description"]}>
             <h2>{props.data.expenseDescription}</h2>
@@ -11,7 +12,7 @@ const ExpenseItem = (props) => {
                ${props.data.expensePrice}
             </div>
          </div>
-      </div>
+      </Card>
    );
 };
 
