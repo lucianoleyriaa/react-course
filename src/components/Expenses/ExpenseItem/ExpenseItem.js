@@ -1,4 +1,4 @@
-import ExpenseDate from "../Expenses/ExpenseDate/ExpenseDate";
+import ExpenseDate from "../ExpenseDate/ExpenseDate";
 import classes from "./ExpenseItem.module.css";
 
 const ExpenseItem = (props) => {
