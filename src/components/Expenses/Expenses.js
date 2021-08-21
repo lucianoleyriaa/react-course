@@ -3,7 +3,7 @@ import Card from "../Card/Card";
 
 import classes from "./Expenses.module.css";
 
-function Expenses(props) {
+const Expenses = (props) => {
    const expenses = props.expensesList;
 
    return (
@@ -13,6 +13,6 @@ function Expenses(props) {
          })}
       </Card>
    );
-}
+};
 
 export default Expenses;
