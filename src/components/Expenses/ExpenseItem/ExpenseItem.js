@@ -1,16 +1,26 @@
-import Card from "../../Card/Card";
+import { useState } from "react";
+
 import ExpenseDate from "../ExpenseDate/ExpenseDate";
 import classes from "./ExpenseItem.module.css";
+import Card from "../../Card/Card";
 
 const ExpenseItem = (props) => {
+   const [title, updateTitle] = useState(props.data.expenseDescription);
+
+   const clickHandler = () => {
+      updateTitle("Changed!!");
+   };
+
    return (
       <Card className={classes["expense-item"]}>
          <ExpenseDate date={props.data.expenseDate} />
          <div className={classes["expense-item__description"]}>
-            <h2>{props.data.expenseDescription}</h2>
+            {/* <h2>{props.data.expenseDescription}</h2> */}
+            <h2>{title}</h2>
             <div className={classes["expense-item__price"]}>
                ${props.data.expensePrice}
             </div>
+            <button onClick={clickHandler}>ChangeTitle</button>
          </div>
       </Card>
    );
