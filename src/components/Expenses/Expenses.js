@@ -9,7 +9,7 @@ const Expenses = (props) => {
    return (
       <Card className={classes.expenses}>
          {expenses.map((expense) => {
-            return <ExpenseItem data={expense} />;
+            return <ExpenseItem data={expense} key={expense.id} />;
          })}
       </Card>
    );

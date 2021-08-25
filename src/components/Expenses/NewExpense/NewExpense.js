@@ -1,10 +1,16 @@
 import ExpenseForm from "./ExpenseForm/ExpenseForm";
 import classes from "./NewExpense.module.css";
 
-const newExpense = () => {
+const newExpense = (props) => {
+   const saveExpenseData = (expenseData) => {
+      const newExpense = { ...expenseData, id: Math.random().toString() };
+
+      props.addExpense(newExpense);
+   };
+
    return (
       <div className={classes["new-expense"]}>
-         <ExpenseForm />
+         <ExpenseForm saveExpenseData={saveExpenseData} />
       </div>
    );
 };
