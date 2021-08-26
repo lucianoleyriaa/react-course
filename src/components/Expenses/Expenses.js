@@ -3,20 +3,26 @@ import Card from "../Card/Card";
 import FilterExpense from "./FilterExpense/FilterExpense";
 
 import classes from "./Expenses.module.css";
-import { Fragment } from "react";
+import { Fragment, useState } from "react";
 
 const Expenses = (props) => {
-   const expenses = props.expensesList;
+   // const expenses = props.expensesList;
+   // const [expenses, setFilteredExpenses] = useState(props.expensesList);
+   // const [defaultYear, setFilteredYear] = useState(new Date().getFullYear());
 
-   const filterByYear = (year) => {
-      console.log(year);
-   };
+   // const filterByYear = (year = defaultYear) => {
+   //    const filteredExpenses = props.expensesList.filter((expense) => {
+   //       return expense.expenseDate.getFullYear() === +year;
+   //    });
+   //    console.log(filteredExpenses);
+   //    setFilteredExpenses(filteredExpenses);
+   // };
 
    return (
       <Fragment>
          <Card className={classes.expenses}>
-            <FilterExpense filterByYear={filterByYear} />
-            {expenses.map((expense) => {
+            {/* <FilterExpense filterByYear={filterByYear} /> */}
+            {props.expensesList.map((expense) => {
                return <ExpenseItem data={expense} key={expense.id} />;
             })}
          </Card>
