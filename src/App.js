@@ -5,13 +5,13 @@ import NewExpense from "./components/Expenses/NewExpense/NewExpense";
 const expensesList = [
    {
       id: "1",
-      expenseDate: new Date(2019, 7, 17),
+      expenseDate: new Date(2020, 7, 17),
       expenseDescription: "Futbol",
       expensePrice: 200,
    },
    {
       id: "2",
-      expenseDate: new Date(2020, 7, 18),
+      expenseDate: new Date(2021, 7, 18),
       expenseDescription: "Nafta Moto",
       expensePrice: 120,
    },
