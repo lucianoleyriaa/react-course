@@ -6,23 +6,21 @@ import classes from "./Expenses.module.css";
 import { Fragment, useState } from "react";
 
 const Expenses = (props) => {
-   // const expenses = props.expensesList;
-   // const [expenses, setFilteredExpenses] = useState(props.expensesList);
-   // const [defaultYear, setFilteredYear] = useState(new Date().getFullYear());
+   const [defaultYear, setFilteredYear] = useState("2021");
 
-   // const filterByYear = (year = defaultYear) => {
-   //    const filteredExpenses = props.expensesList.filter((expense) => {
-   //       return expense.expenseDate.getFullYear() === +year;
-   //    });
-   //    console.log(filteredExpenses);
-   //    setFilteredExpenses(filteredExpenses);
-   // };
+   const filterByYear = (year) => {
+      setFilteredYear(year);
+   };
+
+   const filteredExpenses = props.expensesList.filter((expense) => {
+      return expense.expenseDate.getFullYear() === +defaultYear;
+   });
 
    return (
       <Fragment>
          <Card className={classes.expenses}>
-            {/* <FilterExpense filterByYear={filterByYear} /> */}
-            {props.expensesList.map((expense) => {
+            <FilterExpense filterByYear={filterByYear} />
+            {filteredExpenses.map((expense) => {
                return <ExpenseItem data={expense} key={expense.id} />;
             })}
          </Card>
