@@ -16,6 +16,8 @@ const Expenses = (props) => {
       return expense.expenseDate.getFullYear() === +defaultYear;
    });
 
+   console.log(filteredExpenses);
+
    return (
       <Fragment>
          <Card className={classes.expenses}>
