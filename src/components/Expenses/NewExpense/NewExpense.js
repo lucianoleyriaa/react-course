@@ -1,18 +1,35 @@
+import { useState } from "react";
 import ExpenseForm from "./ExpenseForm/ExpenseForm";
 import classes from "./NewExpense.module.css";
 
-const newExpense = (props) => {
+const NewExpense = (props) => {
    const saveExpenseData = (expenseData) => {
       const newExpense = { ...expenseData, id: Math.random().toString() };
-
       props.addExpense(newExpense);
+   };
+
+   const [isOpen, setNewFormState] = useState(false);
+
+   const showExpenseForm = () => {
+      setNewFormState(true);
+   };
+
+   const closeExpenseForm = () => {
+      setNewFormState(false);
    };
 
    return (
       <div className={classes["new-expense"]}>
-         <ExpenseForm saveExpenseData={saveExpenseData} />
+         {isOpen ? (
+            <ExpenseForm
+               saveExpenseData={saveExpenseData}
+               onCancel={closeExpenseForm}
+            />
+         ) : (
+            <button onClick={showExpenseForm}>New Expense</button>
+         )}
       </div>
    );
 };
 
-export default newExpense;
+export default NewExpense;
