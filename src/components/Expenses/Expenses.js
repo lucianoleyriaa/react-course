@@ -4,6 +4,7 @@ import FilterExpense from "./FilterExpense/FilterExpense";
 
 import classes from "./Expenses.module.css";
 import { Fragment, useState } from "react";
+import ExpensesChart from "./ExpensesChart/ExpensesChart";
 
 const Expenses = (props) => {
    const [defaultYear, setFilteredYear] = useState(new Date().getFullYear());
@@ -16,8 +17,6 @@ const Expenses = (props) => {
       return expense.expenseDate.getFullYear() === +defaultYear;
    });
 
-   console.log(filteredExpenses);
-
    return (
       <Fragment>
          <Card className={classes.expenses}>
@@ -25,6 +24,7 @@ const Expenses = (props) => {
                currentYear={defaultYear}
                filterByYear={filterByYear}
             />
+            <ExpensesChart filteredExpenses={filteredExpenses} />
             <ExpensesList items={filteredExpenses} />
          </Card>
       </Fragment>

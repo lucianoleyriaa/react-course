@@ -9,7 +9,7 @@ const ChartBar = (props) => {
 
    return (
       <div className={classes["chart-bar"]}>
-         <div className={classes["char-bar__inner"]}>
+         <div className={classes["chart-bar__inner"]}>
             <div
                className={classes["chart-bar__fill"]}
                style={{ height: percentage }}

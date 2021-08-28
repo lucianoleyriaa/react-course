@@ -1,7 +1,5 @@
 import Chart from "../../Chart/Chart";
 
-import classes from "./ExpensesChart.module.css";
-
 const ExpensesChart = (props) => {
    const dataPoints = [
       { label: "Jan", value: 0 },
@@ -18,7 +16,9 @@ const ExpensesChart = (props) => {
       { label: "Dec", value: 0 },
    ];
 
-   for (const expense in props.filteredExpenses) {
+   // console.log(props.filteredExpenses[0].expenseDate.getMonth());
+
+   for (const expense of props.filteredExpenses) {
       const month = expense.expenseDate.getMonth();
       dataPoints[month].value += expense.expensePrice;
    }

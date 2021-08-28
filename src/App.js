@@ -17,6 +17,18 @@ const expensesList = [
    },
    {
       id: "3",
+      expenseDate: new Date(2021, 5, 23),
+      expenseDescription: "Cuota Facultad",
+      expensePrice: 8950,
+   },
+   {
+      id: "4",
+      expenseDate: new Date(2021, 6, 5),
+      expenseDescription: "Servicios",
+      expensePrice: 15400,
+   },
+   {
+      id: "5",
       expenseDate: new Date(2021, 7, 18),
       expenseDescription: "Agua",
       expensePrice: 170,
